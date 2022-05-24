@@ -1,0 +1,15 @@
+.container {
+  border: 2px solid lightskyblue;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  justify-content: center;
+  align-items: center;
+}
+.children-container {
+  margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+}

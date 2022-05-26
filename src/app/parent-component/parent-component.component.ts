@@ -11,7 +11,7 @@ export class ParentComponentComponent implements OnInit {
     { name: 'americano', price: 3 },
     { name: 'latte', price: 4.5 },
   ];
-  total: number = this.findTotal();
+  parentTotal: number = this.findTotal();
 
   constructor() {}
 
@@ -27,10 +27,10 @@ export class ParentComponentComponent implements OnInit {
   }
 
   handleClick() {
-    this.total++;
+    this.parentTotal++;
     console.log('hi');
   }
   incrementParent() {
-    this.total++;
+    this.parentTotal++;
   }
 }

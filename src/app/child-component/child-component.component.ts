@@ -16,4 +16,7 @@ export class ChildComponentComponent implements OnInit {
   increment() {
     this.incrementTotal.emit(this.childTotal++);
   }
+  incrementSelf() {
+    this.childTotal++;
+  }
 }

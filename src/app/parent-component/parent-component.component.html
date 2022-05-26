@@ -1,13 +1,36 @@
 <div class="container">
   <h2>Parent Component : Shopping Cart</h2>
-  <label for="list"> Items from Child Component rendered here: </label>
+  <h3>Menu:</h3>
+  <ul>
+    <li>Coffee</li>
+    <li>Latté</li>
+    <li>Macchiato</li>
+    <li>Americano</li>
+    <li>Tea</li>
+  </ul>
+  <h3 for="list">Cart:</h3>
   <ul>
     <li *ngFor="let item of items">{{ item.name }} ${{ item.price }}</li>
   </ul>
-  <p>Total : {{ total }}</p>
+  <p>Total in Parent Component : {{ total }}</p>
+  <button (click)="handleClick()">Increment from parent</button>
+
   <hr />
   <div class="children-container">
-    <app-child-component></app-child-component>
+    <app-child-component
+      (incrementTotal)="incrementParent()"
+    ></app-child-component>
+
     <app-sibling-component></app-sibling-component>
   </div>
+  <!-- to conditionally render components -->
+  <!-- <div class="children-container">
+    <app-child-component
+      [childTotal]="total"
+      *ngIf="total === 12.5; else sibling"
+    ></app-child-component>
+    <ng-template #sibling>
+      <app-sibling-component></app-sibling-component>
+    </ng-template>
+  </div> -->
 </div>

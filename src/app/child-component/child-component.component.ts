@@ -6,12 +6,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child-component.component.css'],
 })
 export class ChildComponentComponent implements OnInit {
-  @Output() incrementEvent = new EventEmitter<number>();
+  @Input() childTotal: number = 0;
+  @Output() incrementTotal = new EventEmitter<number>();
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  handleIncrement() {
-    console.log('hi');
+  increment() {
+    this.incrementTotal.emit(this.childTotal++);
   }
 }

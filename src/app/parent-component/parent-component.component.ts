@@ -25,4 +25,12 @@ export class ParentComponentComponent implements OnInit {
     const totalPrice = this.items.map((item) => item.price);
     return totalPrice.reduce((a, b) => a + b, 0);
   }
+
+  handleClick() {
+    this.total++;
+    console.log('hi');
+  }
+  incrementParent() {
+    this.total++;
+  }
 }
